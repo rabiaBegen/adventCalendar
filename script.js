@@ -2,7 +2,9 @@ fetch('data.json')
     .then(res => res.json())
     .then(data => {
         const calendar = document.getElementById('calendar');
+        
 
+        
         // 🎄 Takvim 7 Kasım 2025'te başlıyor
         const startDate = new Date('2025-11-06');
         const today = new Date();
@@ -19,6 +21,7 @@ fetch('data.json')
             dayBox.textContent = item.day;
 
             // 🎁 Gerçek mod (bugüne kadar açılabilir)
+            /*
             if (item.day <= currentDay) {
                 dayBox.addEventListener('click', () => openModal(item));
                 dayBox.style.opacity = "1";
@@ -26,14 +29,14 @@ fetch('data.json')
             } else {
                 dayBox.style.opacity = "0.5";
                 dayBox.style.cursor = "not-allowed";
-            }
+            }*/
 
             // 💡 TEST MODU (istersen aktif et, yukarıyı kapat)
-            /*
+          
             dayBox.addEventListener('click', () => openModal(item));
             dayBox.style.opacity = "1";
             dayBox.style.cursor = "pointer";
-            */
+           
 
             calendar.appendChild(dayBox);
         });
